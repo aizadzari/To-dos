@@ -12,7 +12,7 @@ const draft = ref({
     pageCount: 1,
   },
   page: 1,
-  itemsPerPage: 10,
+  itemsPerPage: 5,
   headers: [
     { title: "Status", key: "status", sortable: false },
     { title: "Title", key: "title", align: "left", sortable: false },
@@ -33,8 +33,9 @@ watch(props, ({ items }) => {
 });
 
 function getPagination(length) {
+  const { itemsPerPage } = draft.value;
   const total = length;
-  const sizePage = 10;
+  const sizePage = itemsPerPage;
   const result = Math.round(total / sizePage);
   return result;
 }

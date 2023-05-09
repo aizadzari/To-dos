@@ -15,7 +15,7 @@ const draft = ref({
 const rules = ref({
   title: [
     (value) => {
-      if (value) return true;
+      if (value) return false;
 
       return "You must enter a title.";
     },
